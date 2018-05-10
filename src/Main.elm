@@ -2,31 +2,27 @@ module Main exposing (main)
 
 import Html exposing (Html, article, div, h1, main_, text)
 import Html.Attributes exposing (class)
-
-
----- MODEL ----
-
-
-type alias Model =
-    {}
-
-
-init : ( Model, Cmd Msg )
-init =
-    ( {}, Cmd.none )
-
+import LanguageDropdown
+import Model exposing (Model)
+import Msg exposing (Msg(CloseAvailableLanguages, ShowAvailableLanguages))
 
 
 ---- UPDATE ----
 
 
-type Msg
-    = NoOp
-
-
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
-    ( model, Cmd.none )
+    case msg of
+        CloseAvailableLanguages ->
+            ( { model | showAvailableLanguages = False }, Cmd.none )
+
+        ShowAvailableLanguages ->
+            ( { model
+                | showAvailableLanguages =
+                    not model.showAvailableLanguages
+              }
+            , Cmd.none
+            )
 
 
 
@@ -38,15 +34,19 @@ view model =
     let
         classes =
             [ "bg-dark-pink"
+            , "pt3"
             , "overflow-container"
             , "sans-serif"
+            , "vh-100"
             , "white"
             ]
                 |> String.join " "
                 |> class
     in
         main_ [ classes ]
-            [ content ]
+            [ LanguageDropdown.view model
+            , content
+            ]
 
 
 content : Html Msg
@@ -54,7 +54,7 @@ content =
     let
         articleClasses =
             [ "dt"
-            , "vh-100"
+            , "vh-75"
             , "w-100"
             ]
                 |> String.join " "
@@ -99,7 +99,7 @@ main : Program Never Model Msg
 main =
     Html.program
         { view = view
-        , init = init
+        , init = Model.init
         , update = update
         , subscriptions = always Sub.none
         }
