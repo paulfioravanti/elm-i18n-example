@@ -4,6 +4,7 @@ import Html exposing (Html, article, div, h1, main_, text)
 import Html.Attributes exposing (class)
 import LanguageDropdown
 import Model exposing (Model)
+import Mouse
 import Msg exposing (Msg(CloseAvailableLanguages, ShowAvailableLanguages))
 
 
@@ -91,8 +92,12 @@ heading =
             [ text "Vertically centering things in css is easy!" ]
 
 
-
----- PROGRAM ----
+subscriptions : Model -> Sub Msg
+subscriptions model =
+    if model.showAvailableLanguages then
+        Mouse.clicks (\_ -> CloseAvailableLanguages)
+    else
+        Sub.none
 
 
 main : Program Never Model Msg
@@ -101,5 +106,5 @@ main =
         { view = view
         , init = Model.init
         , update = update
-        , subscriptions = always Sub.none
+        , subscriptions = subscriptions
         }
