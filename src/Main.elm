@@ -1,7 +1,7 @@
-module Main exposing (..)
+module Main exposing (main)
 
-import Html exposing (Html, text, div, h1, img)
-import Html.Attributes exposing (src)
+import Html exposing (Html, article, div, h1, main_, text)
+import Html.Attributes exposing (class)
 
 
 ---- MODEL ----
@@ -35,9 +35,60 @@ update msg model =
 
 view : Model -> Html Msg
 view model =
-    div []
-        [ h1 [] [ text "Your Elm App is working!" ]
-        ]
+    let
+        classes =
+            [ "bg-dark-pink"
+            , "overflow-container"
+            , "sans-serif"
+            , "white"
+            ]
+                |> String.join " "
+                |> class
+    in
+        main_ [ classes ]
+            [ content ]
+
+
+content : Html Msg
+content =
+    let
+        articleClasses =
+            [ "dt"
+            , "vh-100"
+            , "w-100"
+            ]
+                |> String.join " "
+                |> class
+
+        divClasses =
+            [ "dtc"
+            , "ph3 ph4-l"
+            , "tc"
+            , "v-mid"
+            ]
+                |> String.join " "
+                |> class
+    in
+        article [ articleClasses ]
+            [ div [ divClasses ]
+                [ heading ]
+            ]
+
+
+heading : Html Msg
+heading =
+    let
+        classes =
+            [ "f6 f2m"
+            , "f-subheadline-l"
+            , "fw6"
+            , "tc"
+            ]
+                |> String.join " "
+                |> class
+    in
+        h1 [ classes ]
+            [ text "Vertically centering things in css is easy!" ]
 
 
 
