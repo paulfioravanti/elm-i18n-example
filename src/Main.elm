@@ -1,11 +1,20 @@
 module Main exposing (main)
 
+import Cmd
 import Html exposing (Html, article, div, h1, main_, text)
 import Html.Attributes exposing (class)
 import LanguageDropdown
 import Model exposing (Model)
 import Mouse
-import Msg exposing (Msg(CloseAvailableLanguages, ShowAvailableLanguages))
+import Msg
+    exposing
+        ( Msg
+            ( ChangeLanguage
+            , CloseAvailableLanguages
+            , FetchTranslations
+            , ShowAvailableLanguages
+            )
+        )
 
 
 ---- UPDATE ----
@@ -14,8 +23,19 @@ import Msg exposing (Msg(CloseAvailableLanguages, ShowAvailableLanguages))
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
+        ChangeLanguage language ->
+            ( { model | currentLanguage = language }
+            , Cmd.fetchTranslations language
+            )
+
         CloseAvailableLanguages ->
             ( { model | showAvailableLanguages = False }, Cmd.none )
+
+        FetchTranslations (Ok translations) ->
+            ( { model | translations = translations }, Cmd.none )
+
+        FetchTranslations (Err msg) ->
+            ( model, Cmd.none )
 
         ShowAvailableLanguages ->
             ( { model
