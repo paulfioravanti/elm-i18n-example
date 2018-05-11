@@ -18,9 +18,6 @@ import Msg
         )
 
 
----- UPDATE ----
-
-
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
@@ -45,10 +42,6 @@ update msg model =
               }
             , Cmd.none
             )
-
-
-
----- VIEW ----
 
 
 view : Model -> Html Msg
