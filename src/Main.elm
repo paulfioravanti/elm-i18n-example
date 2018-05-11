@@ -4,9 +4,6 @@ import Html exposing (Html, article, div, h1, main_, text)
 import Html.Attributes exposing (class)
 
 
----- MODEL ----
-
-
 type alias Model =
     {}
 
@@ -16,10 +13,6 @@ init =
     ( {}, Cmd.none )
 
 
-
----- UPDATE ----
-
-
 type Msg
     = NoOp
 
@@ -27,10 +20,6 @@ type Msg
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     ( model, Cmd.none )
-
-
-
----- VIEW ----
 
 
 view : Model -> Html Msg
@@ -89,10 +78,6 @@ heading =
     in
         h1 [ classes ]
             [ text "Vertically centering things in css is easy!" ]
-
-
-
----- PROGRAM ----
 
 
 main : Program Never Model Msg
