@@ -3,15 +3,10 @@ module LanguageDropdown exposing (view)
 import Html exposing (Html, div, li, p, span, text, ul)
 import Html.Attributes exposing (class)
 import Html.Events exposing (onClick)
-
-
--- import Language
-
+import Language
 import Model exposing (Model)
-import Msg exposing (Msg(ShowAvailableLanguages))
-
-
--- import Translations exposing (Lang)
+import Msg exposing (Msg(ChangeLanguage, ShowAvailableLanguages))
+import Translations exposing (Lang)
 
 
 view : Model -> Html Msg
@@ -66,8 +61,7 @@ currentSelection model =
     in
         p [ classes, onClick ShowAvailableLanguages ]
             [ span []
-                -- [ text (Language.toString model.currentLanguage) ]
-                [ text "English" ]
+                [ text (Language.langToString model.currentLanguage) ]
             , span [ caretClasses ]
                 [ text "▾" ]
             ]
@@ -106,17 +100,15 @@ dropdownList model =
                 |> class
 
         selectableLanguages =
-            [ "Italiano", "日本語" ]
-
-        -- List.filter
-        --     (\language -> language /= model.currentLanguage)
-        --     Language.availableLanguages
+            List.filter
+                (\language -> language /= model.currentLanguage)
+                Language.availableLanguages
     in
         ul [ classes ]
             (List.map dropdownListItem selectableLanguages)
 
 
-dropdownListItem : String -> Html Msg
+dropdownListItem : Lang -> Html Msg
 dropdownListItem language =
     let
         classes =
@@ -130,9 +122,7 @@ dropdownListItem language =
                 |> String.join " "
                 |> class
     in
-        -- li [ classes, onClick (ChangeLanguage language) ]
-        li [ classes ]
+        li [ classes, onClick (ChangeLanguage language) ]
             [ span []
-                -- [ text (Language.toString language) ]
-                [ text language ]
+                [ text (Language.langToString language) ]
             ]

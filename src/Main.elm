@@ -3,6 +3,7 @@ module Main exposing (main)
 import Cmd
 import Html exposing (Html, article, div, h1, main_, text)
 import Html.Attributes exposing (class)
+import I18Next exposing (Translations)
 import LanguageDropdown
 import Model exposing (Model)
 import Mouse
@@ -66,12 +67,12 @@ view model =
     in
         main_ [ classes ]
             [ LanguageDropdown.view model
-            , content
+            , content model.translations
             ]
 
 
-content : Html Msg
-content =
+content : Translations -> Html Msg
+content translations =
     let
         articleClasses =
             [ "dt"
@@ -92,12 +93,12 @@ content =
     in
         article [ articleClasses ]
             [ div [ divClasses ]
-                [ heading ]
+                [ heading translations ]
             ]
 
 
-heading : Html Msg
-heading =
+heading : Translations -> Html Msg
+heading translations =
     let
         classes =
             [ "f6 f2m"
@@ -109,7 +110,7 @@ heading =
                 |> class
     in
         h1 [ classes ]
-            [ text "Vertically centering things in css is easy!" ]
+            [ text (I18Next.t translations "verticallyCenteringInCssIsEasy") ]
 
 
 subscriptions : Model -> Sub Msg
