@@ -26,7 +26,10 @@ update msg model =
     case msg of
         ChangeLanguage language ->
             ( { model | currentLanguage = language }
-            , Cmd.fetchTranslations language
+            , Cmd.batch
+                [ Cmd.fetchTranslations language
+                , Cmd.storeLanguage language
+                ]
             )
 
         CloseAvailableLanguages ->
