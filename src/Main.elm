@@ -3,7 +3,6 @@ module Main exposing (main)
 import Cmd
 import Html exposing (Html, article, div, h1, main_, text)
 import Html.Attributes exposing (class)
-import I18Next exposing (Translations)
 import LanguageDropdown
 import Model exposing (Flags, Model)
 import Mouse
@@ -12,13 +11,10 @@ import Msg
         ( Msg
             ( ChangeLanguage
             , CloseAvailableLanguages
-            , FetchTranslations
             , ShowAvailableLanguages
             )
         )
-
-
----- UPDATE ----
+import Translations exposing (Lang)
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -26,20 +22,11 @@ update msg model =
     case msg of
         ChangeLanguage language ->
             ( { model | currentLanguage = language }
-            , Cmd.batch
-                [ Cmd.fetchTranslations language
-                , Cmd.storeLanguage language
-                ]
+            , Cmd.storeLanguage language
             )
 
         CloseAvailableLanguages ->
             ( { model | showAvailableLanguages = False }, Cmd.none )
-
-        FetchTranslations (Ok translations) ->
-            ( { model | translations = translations }, Cmd.none )
-
-        FetchTranslations (Err msg) ->
-            ( model, Cmd.none )
 
         ShowAvailableLanguages ->
             ( { model
@@ -48,10 +35,6 @@ update msg model =
               }
             , Cmd.none
             )
-
-
-
----- VIEW ----
 
 
 view : Model -> Html Msg
@@ -70,12 +53,12 @@ view model =
     in
         main_ [ classes ]
             [ LanguageDropdown.view model
-            , content model.translations
+            , content model.currentLanguage
             ]
 
 
-content : Translations -> Html Msg
-content translations =
+content : Lang -> Html Msg
+content language =
     let
         articleClasses =
             [ "dt"
@@ -96,12 +79,12 @@ content translations =
     in
         article [ articleClasses ]
             [ div [ divClasses ]
-                [ heading translations ]
+                [ heading language ]
             ]
 
 
-heading : Translations -> Html Msg
-heading translations =
+heading : Lang -> Html Msg
+heading language =
     let
         classes =
             [ "f6 f2m"
@@ -113,7 +96,7 @@ heading translations =
                 |> class
     in
         h1 [ classes ]
-            [ text (I18Next.t translations "verticallyCenteringInCssIsEasy") ]
+            [ text (Translations.verticallyCenteringInCssIsEasy language) ]
 
 
 subscriptions : Model -> Sub Msg

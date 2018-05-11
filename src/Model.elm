@@ -1,11 +1,9 @@
 module Model exposing (Flags, Model, init)
 
-import Cmd
-import I18Next exposing (Translations)
 import Json.Decode as Decode exposing (Value)
 import Language
 import Msg exposing (Msg)
-import Translations exposing (Lang(En))
+import Translations exposing (Lang)
 
 
 type alias Flags =
@@ -15,7 +13,6 @@ type alias Flags =
 type alias Model =
     { currentLanguage : Lang
     , showAvailableLanguages : Bool
-    , translations : Translations
     }
 
 
@@ -29,7 +26,6 @@ init flags =
     in
         ( { currentLanguage = language
           , showAvailableLanguages = False
-          , translations = I18Next.initialTranslations
           }
-        , Cmd.fetchTranslations language
+        , Cmd.none
         )
