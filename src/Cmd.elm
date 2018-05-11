@@ -1,6 +1,6 @@
 port module Cmd exposing (fetchTranslations, storeLanguage)
 
-import I18Next exposing (Translations)
+import I18Next
 import Msg exposing (Msg(FetchTranslations))
 import Translations exposing (Lang)
 
