@@ -30,5 +30,5 @@ elm-app start
 [Demo]: https://elm-i18n-example.herokuapp.com/
 [Elm]: http://elm-lang.org/
 [Full Screen Centered Title component documentation page]: http://tachyons.io/components/layout/full-screen-centered-title/index.html
-[Runtime Language Switching in Elm]: https://www.paulfioravanti.com
+[Runtime Language Switching in Elm]: https://paulfioravanti.com/blog/2018/05/11/runtime-language-switching-in-elm/
 [Tachyons]: http://tachyons.io/
