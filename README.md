@@ -12,6 +12,21 @@ It was created as part of a blog post I wrote about
 
 [Demo][]
 
+## Setup
+
+```sh
+git clone https://github.com/paulfioravanti/elm-i18n-example.git
+cd elm-i18n-example
+npm install
+elm-package install
+```
+
+## Run Server
+
+```sh
+elm-app start
+```
+
 [Demo]: https://elm-i18n-example.herokuapp.com/
 [Elm]: http://elm-lang.org/
 [Full Screen Centered Title component documentation page]: http://tachyons.io/components/layout/full-screen-centered-title/index.html
