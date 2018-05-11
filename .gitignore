@@ -1,5 +1,6 @@
-# Distribution
-build/
+# NOTE: Distribution code needs to be version controlled for
+# Heroku deployment
+# build/
 
 # elm-package generated files
 elm-stuff
