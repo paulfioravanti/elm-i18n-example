@@ -5,7 +5,7 @@ import Html exposing (Html, article, div, h1, main_, text)
 import Html.Attributes exposing (class)
 import I18Next exposing (Translations)
 import LanguageDropdown
-import Model exposing (Model)
+import Model exposing (Flags, Model)
 import Mouse
 import Msg
     exposing
@@ -121,9 +121,9 @@ subscriptions model =
         Sub.none
 
 
-main : Program Never Model Msg
+main : Program Flags Model Msg
 main =
-    Html.program
+    Html.programWithFlags
         { view = view
         , init = Model.init
         , update = update
