@@ -11,36 +11,36 @@ import Translations exposing (Lang)
 
 
 view : Model -> Html Msg
-view model =
-    div [ class Styles.dropdownContainer ]
-        [ currentSelection model
-        , dropdownList model
-        ]
+view { currentLanguage, showAvailableLanguages } =
+    let
+        selectableLanguages =
+            List.filter
+                (\language -> language /= currentLanguage)
+                Language.availableLanguages
+    in
+        div [ class Styles.dropdownContainer ]
+            [ currentSelection currentLanguage showAvailableLanguages
+            , dropdownList showAvailableLanguages selectableLanguages
+            ]
 
 
-currentSelection : Model -> Html Msg
-currentSelection model =
+currentSelection : Lang -> Bool -> Html Msg
+currentSelection currentLanguage showAvailableLanguages =
     p
-        [ class (Styles.currentSelection model.showAvailableLanguages)
+        [ class (Styles.currentSelection showAvailableLanguages)
         , onClick ShowAvailableLanguages
         ]
         [ span []
-            [ text (Language.langToString model.currentLanguage) ]
+            [ text (Language.langToString currentLanguage) ]
         , span [ class Styles.caret ]
             [ text "▾" ]
         ]
 
 
-dropdownList : Model -> Html Msg
-dropdownList model =
-    let
-        selectableLanguages =
-            List.filter
-                (\language -> language /= model.currentLanguage)
-                Language.availableLanguages
-    in
-        ul [ class (Styles.dropdownList model.showAvailableLanguages) ]
-            (List.map dropdownListItem selectableLanguages)
+dropdownList : Bool -> List Lang -> Html Msg
+dropdownList showAvailableLanguages selectableLanguages =
+    ul [ class (Styles.dropdownList showAvailableLanguages) ]
+        (List.map dropdownListItem selectableLanguages)
 
 
 dropdownListItem : Lang -> Html Msg
