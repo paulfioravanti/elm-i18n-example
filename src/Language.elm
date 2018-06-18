@@ -9,8 +9,8 @@ availableLanguages =
 
 
 langFromFlag : Result String String -> Lang
-langFromFlag language =
-    case language of
+langFromFlag languageFlag =
+    case languageFlag of
         Ok language ->
             Translations.getLnFromCode language
 
