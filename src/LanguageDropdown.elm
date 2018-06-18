@@ -6,123 +6,49 @@ import Html.Events exposing (onClick)
 import Language
 import Model exposing (Model)
 import Msg exposing (Msg(ChangeLanguage, ShowAvailableLanguages))
+import Styles
 import Translations exposing (Lang)
 
 
 view : Model -> Html Msg
 view model =
-    let
-        classes =
-            [ "center"
-            , "f3"
-            , "flex"
-            , "h3"
-            , "items-center"
-            , "justify-end"
-            , "w-90"
-            ]
-                |> String.join " "
-                |> class
-    in
-        div [ classes ]
-            [ currentSelection model
-            , dropdownList model
-            ]
+    div [ class Styles.dropdownContainer ]
+        [ currentSelection model
+        , dropdownList model
+        ]
 
 
 currentSelection : Model -> Html Msg
 currentSelection model =
-    let
-        displayClasses =
-            if model.showAvailableLanguages then
-                [ "br--top" ]
-            else
-                []
-
-        classes =
-            [ "b--white"
-            , "ba"
-            , "br2"
-            , "pa2"
-            , "pointer"
-            , "tc"
-            , "w4"
-            ]
-                ++ displayClasses
-                |> String.join " "
-                |> class
-
-        caretClasses =
-            [ "absolute"
-            , "ml2"
-            ]
-                |> String.join " "
-                |> class
-    in
-        p [ classes, onClick ShowAvailableLanguages ]
-            [ span []
-                [ text (Language.langToString model.currentLanguage) ]
-            , span [ caretClasses ]
-                [ text "▾" ]
-            ]
+    p
+        [ class (Styles.currentSelection model.showAvailableLanguages)
+        , onClick ShowAvailableLanguages
+        ]
+        [ span []
+            [ text (Language.langToString model.currentLanguage) ]
+        , span [ class Styles.caret ]
+            [ text "▾" ]
+        ]
 
 
 dropdownList : Model -> Html Msg
 dropdownList model =
     let
-        displayClasses =
-            if model.showAvailableLanguages then
-                [ "flex", "flex-column" ]
-            else
-                [ "dn" ]
-
-        classes =
-            [ "absolute"
-            , "b--white"
-            , "bb"
-            , "bl"
-            , "br"
-            , "br--bottom"
-            , "br2"
-            , "items-center"
-            , "list"
-            , "mt5"
-            , "pl0"
-            , "pointer"
-            , "pr0"
-            , "pt1"
-            , "tc"
-            , "top-0"
-            , "w4"
-            ]
-                ++ displayClasses
-                |> String.join " "
-                |> class
-
         selectableLanguages =
             List.filter
                 (\language -> language /= model.currentLanguage)
                 Language.availableLanguages
     in
-        ul [ classes ]
+        ul [ class (Styles.dropdownList model.showAvailableLanguages) ]
             (List.map dropdownListItem selectableLanguages)
 
 
 dropdownListItem : Lang -> Html Msg
 dropdownListItem language =
-    let
-        classes =
-            [ "hover-bg-white"
-            , "hover-dark-pink"
-            , "ph1"
-            , "pv2"
-            , "pt0"
-            , "w-100"
-            ]
-                |> String.join " "
-                |> class
-    in
-        li [ classes, onClick (ChangeLanguage language) ]
-            [ span []
-                [ text (Language.langToString language) ]
-            ]
+    li
+        [ class Styles.dropdownListItem
+        , onClick (ChangeLanguage language)
+        ]
+        [ span []
+            [ text (Language.langToString language) ]
+        ]

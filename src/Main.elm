@@ -14,6 +14,7 @@ import Msg
             , ShowAvailableLanguages
             )
         )
+import Styles
 import Translations exposing (Lang)
 
 
@@ -39,64 +40,24 @@ update msg model =
 
 view : Model -> Html Msg
 view model =
-    let
-        classes =
-            [ "bg-dark-pink"
-            , "pt3"
-            , "overflow-container"
-            , "sans-serif"
-            , "vh-100"
-            , "white"
-            ]
-                |> String.join " "
-                |> class
-    in
-        main_ [ classes ]
-            [ LanguageDropdown.view model
-            , content model.currentLanguage
-            ]
+    main_ [ class Styles.main_ ]
+        [ LanguageDropdown.view model
+        , content model.currentLanguage
+        ]
 
 
 content : Lang -> Html Msg
 content language =
-    let
-        articleClasses =
-            [ "dt"
-            , "vh-75"
-            , "w-100"
-            ]
-                |> String.join " "
-                |> class
-
-        divClasses =
-            [ "dtc"
-            , "ph3 ph4-l"
-            , "tc"
-            , "v-mid"
-            ]
-                |> String.join " "
-                |> class
-    in
-        article [ articleClasses ]
-            [ div [ divClasses ]
-                [ heading language ]
-            ]
+    article [ class Styles.article ]
+        [ div [ class Styles.articleContainer ]
+            [ heading language ]
+        ]
 
 
 heading : Lang -> Html Msg
 heading language =
-    let
-        classes =
-            [ "f6 f2m"
-            , "f-subheadline-l"
-            , "fw6"
-            , "tc"
-            ]
-                |> String.join " "
-                |> class
-    in
-        h1 [ classes ]
-            [ text (Translations.verticallyCenteringInCssIsEasy language) ]
+    h1 [ class Styles.heading ]
+        [ text (Translations.verticallyCenteringInCssIsEasy language) ]
 
 
 subscriptions : Model -> Sub Msg
