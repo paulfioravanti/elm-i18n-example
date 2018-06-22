@@ -27,8 +27,16 @@ elm-package install
 elm-app start
 ```
 
+## Presentation
+
+I did a talk about this project at the [Elm Sydney Meetup][] on
+[21 June 2018][elm-sydney-20180621] ([slide deck][speakerdeck]).
+
 [Demo]: https://elm-i18n-example.herokuapp.com/
 [Elm]: http://elm-lang.org/
+[Elm Sydney Meetup]: https://www.meetup.com/Sydney-Elm-Meetup/
+[elm-sydney-20180621]: https://www.meetup.com/Sydney-Elm-Meetup/events/pdpzvmyxjbcc/
 [Full Screen Centered Title component documentation page]: http://tachyons.io/components/layout/full-screen-centered-title/index.html
 [Runtime Language Switching in Elm]: https://paulfioravanti.com/blog/2018/05/11/runtime-language-switching-in-elm/
+[speakerdeck]: https://speakerdeck.com/paulfioravanti/runtime-i18n-in-elm
 [Tachyons]: http://tachyons.io/
