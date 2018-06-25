@@ -1,4 +1,7 @@
 {
+  "checks": {
+    "SingleFieldRecord": false
+  },
   "excludedPaths": [
     "src/Translations.elm"
   ]
