@@ -8,7 +8,8 @@ language dropdown menu, and allows you to switch the language of the message
 displayed.
 
 It was created as part of a blog post I wrote about
-[Runtime Language Switching in Elm][].
+[Runtime Language Switching in Elm][]. The post references the example when it
+was using Elm 0.18, so that application state is preserved in the [0.18 branch].
 
 [Demo][]
 
@@ -32,6 +33,7 @@ elm-app start
 I did a talk about this project at the [Elm Sydney Meetup][] on
 [21 June 2018][elm-sydney-20180621] ([slide deck][speakerdeck]).
 
+[0.18 branch]: https://github.com/paulfioravanti/elm-i18n-example/tree/0.18
 [Demo]: https://elm-i18n-example.herokuapp.com/
 [Elm]: http://elm-lang.org/
 [Elm Sydney Meetup]: https://www.meetup.com/Sydney-Elm-Meetup/
