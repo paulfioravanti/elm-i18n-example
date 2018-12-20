@@ -2,7 +2,8 @@ module LanguageDropdown exposing (view)
 
 import Html exposing (Html, div, li, p, span, text, ul)
 import Html.Attributes exposing (class)
-import Html.Events exposing (onClick)
+import Html.Events as Events exposing (onClick)
+import Json.Decode as Decode
 import Language
 import Model exposing (Model)
 import Msg exposing (Msg(..))
@@ -28,7 +29,13 @@ currentSelection : Lang -> Bool -> Html Msg
 currentSelection currentLanguage showAvailableLanguages =
     p
         [ class (Styles.currentSelection showAvailableLanguages)
-        , onClick ShowAvailableLanguages
+        , Events.custom "click"
+            (Decode.succeed
+                { message = ShowAvailableLanguages
+                , stopPropagation = True
+                , preventDefault = False
+                }
+            )
         ]
         [ span []
             [ text (Language.langToString currentLanguage) ]
