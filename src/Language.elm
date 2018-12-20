@@ -1,5 +1,6 @@
 module Language exposing (availableLanguages, langFromFlag, langToString)
 
+import Json.Decode as Decode exposing (Error)
 import Translations exposing (Lang(..))
 
 
@@ -8,7 +9,7 @@ availableLanguages =
     [ En, It, Ja ]
 
 
-langFromFlag : Result String String -> Lang
+langFromFlag : Result Error String -> Lang
 langFromFlag languageFlag =
     case languageFlag of
         Ok language ->
