@@ -24,8 +24,8 @@ init flags =
                 |> Decode.decodeValue Decode.string
                 |> Language.langFromFlag
     in
-        ( { currentLanguage = language
-          , showAvailableLanguages = False
-          }
-        , Cmd.none
-        )
+    ( { currentLanguage = language
+      , showAvailableLanguages = False
+      }
+    , Cmd.none
+    )

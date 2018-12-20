@@ -1,6 +1,6 @@
 module Language exposing (availableLanguages, langFromFlag, langToString)
 
-import Translations exposing (Lang(En, It, Ja))
+import Translations exposing (Lang(..))
 
 
 availableLanguages : List Lang

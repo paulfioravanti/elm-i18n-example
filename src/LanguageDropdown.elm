@@ -5,7 +5,7 @@ import Html.Attributes exposing (class)
 import Html.Events exposing (onClick)
 import Language
 import Model exposing (Model)
-import Msg exposing (Msg(ChangeLanguage, ShowAvailableLanguages))
+import Msg exposing (Msg(..))
 import Styles
 import Translations exposing (Lang)
 
@@ -18,10 +18,10 @@ view { currentLanguage, showAvailableLanguages } =
                 (\language -> language /= currentLanguage)
                 Language.availableLanguages
     in
-        div [ class Styles.dropdownContainer ]
-            [ currentSelection currentLanguage showAvailableLanguages
-            , dropdownList showAvailableLanguages selectableLanguages
-            ]
+    div [ class Styles.dropdownContainer ]
+        [ currentSelection currentLanguage showAvailableLanguages
+        , dropdownList showAvailableLanguages selectableLanguages
+        ]
 
 
 currentSelection : Lang -> Bool -> Html Msg

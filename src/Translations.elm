@@ -1,4 +1,4 @@
-module Translations exposing (..)
+module Translations exposing (Lang(..), getLnFromCode, verticallyCenteringInCssIsEasy)
 
 
 type Lang

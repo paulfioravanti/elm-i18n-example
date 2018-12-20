@@ -4,11 +4,7 @@ import Cmd
 import Model exposing (Model)
 import Msg
     exposing
-        ( Msg
-            ( ChangeLanguage
-            , CloseAvailableLanguages
-            , ShowAvailableLanguages
-            )
+        ( Msg(..)
         )
 
 
