@@ -13,7 +13,9 @@ subscriptions model =
     -- https://github.com/elm/core/issues/980
     -- https://github.com/elm/core/issues/993
     if model.showAvailableLanguages then
-        Events.onClick (Decode.succeed CloseAvailableLanguages)
+        Sub.batch
+            [ Events.onClick (Decode.succeed CloseAvailableLanguages)
+            ]
 
     else
         Sub.none
