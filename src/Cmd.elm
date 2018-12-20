@@ -1,6 +1,5 @@
 port module Cmd exposing (storeLanguage)
 
-import Debug
 import Translations exposing (Lang)
 
 
