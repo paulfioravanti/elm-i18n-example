@@ -6,7 +6,7 @@ import Html.Events as Events exposing (onClick)
 import Json.Decode as Decode
 import Language
 import Model exposing (Model)
-import Msg exposing (Msg(..))
+import Msg exposing (Msg)
 import Styles
 import Translations exposing (Lang)
 
@@ -31,7 +31,7 @@ currentSelection currentLanguage showAvailableLanguages =
         [ class (Styles.currentSelection showAvailableLanguages)
         , Events.custom "click"
             (Decode.succeed
-                { message = ShowAvailableLanguages
+                { message = Msg.ShowAvailableLanguages
                 , stopPropagation = True
                 , preventDefault = False
                 }
@@ -54,7 +54,7 @@ dropdownListItem : Lang -> Html Msg
 dropdownListItem language =
     li
         [ class Styles.dropdownListItem
-        , onClick (ChangeLanguage language)
+        , onClick (Msg.ChangeLanguage language)
         ]
         [ span []
             [ text (Language.langToString language) ]

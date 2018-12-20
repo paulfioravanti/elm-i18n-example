@@ -5,14 +5,14 @@ import Html.Attributes exposing (class)
 import Html.Events exposing (onClick)
 import LanguageDropdown
 import Model exposing (Model)
-import Msg exposing (Msg(..))
+import Msg exposing (Msg)
 import Styles
 import Translations exposing (Lang)
 
 
 view : Model -> Html Msg
 view model =
-    main_ [ class Styles.main_, onClick CloseAvailableLanguages ]
+    main_ [ class Styles.main_, onClick Msg.CloseAvailableLanguages ]
         [ LanguageDropdown.view model
         , content model.currentLanguage
         ]
