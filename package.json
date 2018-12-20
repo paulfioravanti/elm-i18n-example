@@ -1,7 +1,7 @@
 {
   "name": "elm-i18n-example",
   "version": "1.0.0",
-  "description": "This project is bootstrapped with [Create Elm App](https://github.com/halfzebra/create-elm-app).",
+  "description": "Elm Internationalisation Example",
   "main": "index.js",
   "directories": {
     "test": "tests"
@@ -9,9 +9,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paulfioravanti/elm-i18n-example.git"
+  },
+  "author": "Paul Fioravanti",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/paulfioravanti/elm-i18n-example/issues"
+  },
+  "homepage": "https://github.com/paulfioravanti/elm-i18n-example#readme",
   "dependencies": {
-    "tachyons": "^4.9.1"
+    "tachyons": "^4.11.1"
   }
 }
