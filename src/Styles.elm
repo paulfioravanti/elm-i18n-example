@@ -1,15 +1,14 @@
-module Styles
-    exposing
-        ( article
-        , articleContainer
-        , caret
-        , currentSelection
-        , dropdownContainer
-        , dropdownList
-        , dropdownListItem
-        , heading
-        , main_
-        )
+module Styles exposing
+    ( article
+    , articleContainer
+    , caret
+    , currentSelection
+    , dropdownContainer
+    , dropdownList
+    , dropdownListItem
+    , heading
+    , main_
+    )
 
 
 article : String
@@ -45,19 +44,20 @@ currentSelection showAvailableLanguages =
         availableLanguagesClasses =
             if showAvailableLanguages then
                 [ "br--top" ]
+
             else
                 []
     in
-        [ "b--white"
-        , "ba"
-        , "br2"
-        , "pa2"
-        , "pointer"
-        , "tc"
-        , "w4"
-        ]
-            ++ availableLanguagesClasses
-            |> String.join " "
+    [ "b--white"
+    , "ba"
+    , "br2"
+    , "pa2"
+    , "pointer"
+    , "tc"
+    , "w4"
+    ]
+        ++ availableLanguagesClasses
+        |> String.join " "
 
 
 dropdownContainer : String
@@ -79,29 +79,30 @@ dropdownList showAvailableLanguages =
         displayClasses =
             if showAvailableLanguages then
                 [ "flex", "flex-column" ]
+
             else
                 [ "dn" ]
     in
-        [ "absolute"
-        , "b--white"
-        , "bb"
-        , "bl"
-        , "br"
-        , "br--bottom"
-        , "br2"
-        , "items-center"
-        , "list"
-        , "mt5"
-        , "pl0"
-        , "pointer"
-        , "pr0"
-        , "pt1"
-        , "tc"
-        , "top-0"
-        , "w4"
-        ]
-            ++ displayClasses
-            |> String.join " "
+    [ "absolute"
+    , "b--white"
+    , "bb"
+    , "bl"
+    , "br"
+    , "br--bottom"
+    , "br2"
+    , "items-center"
+    , "list"
+    , "mt5"
+    , "pl0"
+    , "pointer"
+    , "pr0"
+    , "pt1"
+    , "tc"
+    , "top-0"
+    , "w4"
+    ]
+        ++ displayClasses
+        |> String.join " "
 
 
 dropdownListItem : String

@@ -1,5 +1,6 @@
 port module Cmd exposing (storeLanguage)
 
+import Debug
 import Translations exposing (Lang)
 
 
@@ -9,6 +10,5 @@ port storeLanguageInLocalStorage : String -> Cmd msg
 storeLanguage : Lang -> Cmd msg
 storeLanguage language =
     language
-        |> toString
-        |> String.toLower
+        |> Translations.getCodeFromLn
         |> storeLanguageInLocalStorage

@@ -2,10 +2,11 @@ module LanguageDropdown exposing (view)
 
 import Html exposing (Html, div, li, p, span, text, ul)
 import Html.Attributes exposing (class)
-import Html.Events exposing (onClick)
+import Html.Events as Events exposing (onClick)
+import Json.Decode as Decode
 import Language
 import Model exposing (Model)
-import Msg exposing (Msg(ChangeLanguage, ShowAvailableLanguages))
+import Msg exposing (Msg)
 import Styles
 import Translations exposing (Lang)
 
@@ -18,17 +19,23 @@ view { currentLanguage, showAvailableLanguages } =
                 (\language -> language /= currentLanguage)
                 Language.availableLanguages
     in
-        div [ class Styles.dropdownContainer ]
-            [ currentSelection currentLanguage showAvailableLanguages
-            , dropdownList showAvailableLanguages selectableLanguages
-            ]
+    div [ class Styles.dropdownContainer ]
+        [ currentSelection currentLanguage showAvailableLanguages
+        , dropdownList showAvailableLanguages selectableLanguages
+        ]
 
 
 currentSelection : Lang -> Bool -> Html Msg
 currentSelection currentLanguage showAvailableLanguages =
     p
         [ class (Styles.currentSelection showAvailableLanguages)
-        , onClick ShowAvailableLanguages
+        , Events.custom "click"
+            (Decode.succeed
+                { message = Msg.ShowAvailableLanguages
+                , stopPropagation = True
+                , preventDefault = False
+                }
+            )
         ]
         [ span []
             [ text (Language.langToString currentLanguage) ]
@@ -47,7 +54,7 @@ dropdownListItem : Lang -> Html Msg
 dropdownListItem language =
     li
         [ class Styles.dropdownListItem
-        , onClick (ChangeLanguage language)
+        , onClick (Msg.ChangeLanguage language)
         ]
         [ span []
             [ text (Language.langToString language) ]

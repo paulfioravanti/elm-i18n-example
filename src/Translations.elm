@@ -1,4 +1,9 @@
-module Translations exposing (..)
+module Translations exposing
+    ( Lang(..)
+    , getCodeFromLn
+    , getLnFromCode
+    , verticallyCenteringInCssIsEasy
+    )
 
 
 type Lang
@@ -21,6 +26,19 @@ getLnFromCode code =
 
         _ ->
             En
+
+
+getCodeFromLn : Lang -> String
+getCodeFromLn code =
+    case code of
+        En ->
+            "en"
+
+        It ->
+            "it"
+
+        Ja ->
+            "ja"
 
 
 verticallyCenteringInCssIsEasy : Lang -> String
