@@ -1,5 +1,6 @@
 module View exposing (view)
 
+import Browser exposing (Document)
 import Html exposing (Html, article, div, h1, main_, text)
 import Html.Attributes exposing (class)
 import Html.Events exposing (onClick)
@@ -10,12 +11,16 @@ import Styles
 import Translations exposing (Lang)
 
 
-view : Model -> Html Msg
+view : Model -> Document Msg
 view model =
-    main_ [ class Styles.main_, onClick Msg.CloseAvailableLanguages ]
-        [ LanguageDropdown.view model
-        , content model.currentLanguage
+    { title = "Elm I18n Example"
+    , body =
+        [ main_ [ class Styles.main_, onClick Msg.CloseAvailableLanguages ]
+            [ LanguageDropdown.view model
+            , content model.currentLanguage
+            ]
         ]
+    }
 
 
 content : Lang -> Html Msg

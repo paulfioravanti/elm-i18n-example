@@ -9,7 +9,7 @@ import View
 
 main : Program Flags Model Msg
 main =
-    Browser.element
+    Browser.document
         { init = Model.init
         , update = Update.update
         , view = View.view

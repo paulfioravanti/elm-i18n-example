@@ -1,18 +1,13 @@
 import "tachyons"
 import { Elm } from "./Main.elm"
 
-const appContainer = document.getElementById("root")
+const app = Elm.Main.init({
+  flags: { language: getLanguage() }
+})
 
-if (appContainer) {
-  const app = Elm.Main.init({
-    node: appContainer,
-    flags: { language: getLanguage() }
-  })
-
-  app.ports.storeLanguageInLocalStorage.subscribe((language) => {
-    localStorage.setItem("elm-i18n-example-language", language)
-  })
-}
+app.ports.storeLanguageInLocalStorage.subscribe((language) => {
+  localStorage.setItem("elm-i18n-example-language", language)
+})
 
 function getLanguage() {
   return localStorage.getItem("elm-i18n-example-language") ||
