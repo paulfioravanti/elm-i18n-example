@@ -13,6 +13,7 @@ type alias Flags =
 type alias Model =
     { currentLanguage : Lang
     , showAvailableLanguages : Bool
+    , title : String
     }
 
 
@@ -24,6 +25,9 @@ init flags =
                 |> Decode.decodeValue Decode.string
                 |> Language.langFromFlag
     in
-    ( { currentLanguage = language, showAvailableLanguages = False }
+    ( { currentLanguage = language
+      , showAvailableLanguages = False
+      , title = Translations.title language
+      }
     , Cmd.none
     )

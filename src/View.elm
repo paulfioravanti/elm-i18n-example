@@ -13,7 +13,7 @@ import Translations exposing (Lang)
 
 view : Model -> Document Msg
 view model =
-    { title = "Elm I18n Example"
+    { title = model.title
     , body =
         [ main_ [ class Styles.main_, onClick Msg.CloseAvailableLanguages ]
             [ LanguageDropdown.view model

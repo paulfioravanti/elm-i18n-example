@@ -2,6 +2,7 @@ module Translations exposing
     ( Lang(..)
     , getCodeFromLn
     , getLnFromCode
+    , title
     , verticallyCenteringInCssIsEasy
     )
 
@@ -39,6 +40,19 @@ getCodeFromLn code =
 
         Ja ->
             "ja"
+
+
+title : Lang -> String
+title lang =
+    case lang of
+        En ->
+            "Multilingualisation in Elm"
+
+        It ->
+            "Multilingualizzazione in Elm"
+
+        Ja ->
+            "Elmにおける多言語化"
 
 
 verticallyCenteringInCssIsEasy : Lang -> String
