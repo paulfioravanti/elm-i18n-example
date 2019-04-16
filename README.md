@@ -9,7 +9,8 @@ displayed.
 
 It was created as part of a blog post I wrote about
 [Runtime Language Switching in Elm][]. The post references the example when it
-was using Elm 0.18, so that application state is preserved in the [0.18 branch].
+was using Elm 0.18, so that application state is preserved in the
+[0.18 branch][].
 
 [Demo][]
 
