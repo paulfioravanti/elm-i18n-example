@@ -1,6 +1,6 @@
 module Model exposing (Flags, Model, init)
 
-import Json.Decode as Decode exposing (Value)
+import Json.Decode exposing (Value)
 import Language
 import Msg exposing (Msg)
 import Translations exposing (Lang)
@@ -21,9 +21,7 @@ init : Flags -> ( Model, Cmd Msg )
 init flags =
     let
         language =
-            flags.language
-                |> Decode.decodeValue Decode.string
-                |> Language.langFromFlag
+            Language.langFromFlag flags.language
     in
     ( { currentLanguage = language
       , showAvailableLanguages = False
