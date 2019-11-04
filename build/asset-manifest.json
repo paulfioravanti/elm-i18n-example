@@ -1,11 +1,17 @@
 {
-  "main.js": "/static/js/main.3fb8a506.chunk.js",
-  "main.js.map": "/static/js/main.3fb8a506.chunk.js.map",
-  "runtime~main.js": "/static/js/runtime~main.cca692ed.js",
-  "runtime~main.js.map": "/static/js/runtime~main.cca692ed.js.map",
-  "vendors~main.css": "/static/css/vendors~main.1b22359f.chunk.css",
-  "vendors~main.js": "/static/js/vendors~main.e905fa4d.chunk.js",
-  "vendors~main.css.map": "/static/css/vendors~main.1b22359f.chunk.css.map",
-  "vendors~main.js.map": "/static/js/vendors~main.e905fa4d.chunk.js.map",
-  "index.html": "/index.html"
+  "main.js": "/static/js/main.dd3ed921.chunk.js",
+  "main.js.map": "/static/js/main.dd3ed921.chunk.js.map",
+  "runtime~main.js": "/static/js/runtime~main.1b922744.js",
+  "runtime~main.js.map": "/static/js/runtime~main.1b922744.js.map",
+  "vendors~main.css": "/static/css/vendors~main.9d1eebf0.chunk.css",
+  "vendors~main.js": "/static/js/vendors~main.f9a50080.chunk.js",
+  "vendors~main.js.map": "/static/js/vendors~main.f9a50080.chunk.js.map",
+  "./service-worker.js": "/./service-worker.js",
+  "favicon.ico": "/favicon.ico",
+  "index.html": "/index.html",
+  "locale/translations.en.json": "/locale/translations.en.json",
+  "locale/translations.it.json": "/locale/translations.it.json",
+  "locale/translations.ja.json": "/locale/translations.ja.json",
+  "manifest.json": "/manifest.json",
+  "precache-manifest.727bad44650d522be5f2ef667c7d882c.js": "/precache-manifest.727bad44650d522be5f2ef667c7d882c.js"
 }
