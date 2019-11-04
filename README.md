@@ -20,7 +20,6 @@ was using Elm 0.18, so that application state is preserved in the
 git clone https://github.com/paulfioravanti/elm-i18n-example.git
 cd elm-i18n-example
 npm install
-elm-package install
 ```
 
 ## Run Server
