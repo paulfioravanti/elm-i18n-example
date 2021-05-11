@@ -22,20 +22,17 @@ availableLanguages =
     [ En, It, Ja ]
 
 
-getLnFromCode : String -> Lang
-getLnFromCode code =
+getCodeFromLn : Lang -> String
+getCodeFromLn code =
     case code of
-        "en" ->
-            En
+        En ->
+            "en"
 
-        "it" ->
-            It
+        It ->
+            "it"
 
-        "ja" ->
-            Ja
-
-        _ ->
-            En
+        Ja ->
+            "ja"
 
 
 getLnFromFlag : Value -> Lang
@@ -51,19 +48,6 @@ getLnFromFlag languageFlag =
 
         Err _ ->
             En
-
-
-getCodeFromLn : Lang -> String
-getCodeFromLn code =
-    case code of
-        En ->
-            "en"
-
-        It ->
-            "it"
-
-        Ja ->
-            "ja"
 
 
 language : Lang -> String
@@ -103,3 +87,23 @@ verticallyCenteringInCssIsEasy lang =
 
         Ja ->
             "CSSで垂直センタリングは簡単だよ！"
+
+
+
+-- PRIVATE
+
+
+getLnFromCode : String -> Lang
+getLnFromCode code =
+    case code of
+        "en" ->
+            En
+
+        "it" ->
+            It
+
+        "ja" ->
+            Ja
+
+        _ ->
+            En
