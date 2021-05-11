@@ -3,7 +3,7 @@ module Main exposing (main)
 import Browser
 import Model exposing (Flags, Model)
 import Msg exposing (Msg)
-import Translations
+import Translations exposing (Lang)
 import Update
 import View
 
@@ -14,7 +14,7 @@ main =
         { init = init
         , update = Update.update
         , view = View.view
-        , subscriptions = always Sub.none
+        , subscriptions = \_ -> Sub.none
         }
 
 
@@ -25,6 +25,7 @@ main =
 init : Flags -> ( Model, Cmd Msg )
 init flags =
     let
+        language : Lang
         language =
             Translations.getLnFromFlag flags.language
     in

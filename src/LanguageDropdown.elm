@@ -13,6 +13,7 @@ import Translations exposing (Lang)
 view : Model -> Html Msg
 view { currentLanguage, showAvailableLanguages } =
     let
+        selectableLanguages : List Lang
         selectableLanguages =
             List.filter
                 (\language -> language /= currentLanguage)

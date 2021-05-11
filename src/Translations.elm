@@ -2,14 +2,13 @@ module Translations exposing
     ( Lang
     , availableLanguages
     , getCodeFromLn
-    , getLnFromCode
     , getLnFromFlag
     , language
     , title
     , verticallyCenteringInCssIsEasy
     )
 
-import Json.Decode as Decode exposing (Value)
+import Json.Decode as Decode exposing (Error, Value)
 
 
 type Lang
@@ -42,6 +41,7 @@ getLnFromCode code =
 getLnFromFlag : Value -> Lang
 getLnFromFlag languageFlag =
     let
+        decodedLanguage : Result Error String
         decodedLanguage =
             Decode.decodeValue Decode.string languageFlag
     in

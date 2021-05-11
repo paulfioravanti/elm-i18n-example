@@ -21,5 +21,8 @@
   "homepage": "https://github.com/paulfioravanti/elm-i18n-example#readme",
   "dependencies": {
     "tachyons": "^4.11.1"
+  },
+  "devDependencies": {
+    "elm-review": "^2.5.1"
   }
 }

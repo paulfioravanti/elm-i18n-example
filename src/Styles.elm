@@ -41,6 +41,7 @@ caret =
 currentSelection : Bool -> String
 currentSelection showAvailableLanguages =
     let
+        availableLanguagesClasses : List String
         availableLanguagesClasses =
             if showAvailableLanguages then
                 [ "br--top" ]
@@ -48,15 +49,14 @@ currentSelection showAvailableLanguages =
             else
                 []
     in
-    [ "b--white"
-    , "ba"
-    , "br2"
-    , "pa2"
-    , "pointer"
-    , "tc"
-    , "w4"
-    ]
-        ++ availableLanguagesClasses
+    "b--white"
+        :: "ba"
+        :: "br2"
+        :: "pa2"
+        :: "pointer"
+        :: "tc"
+        :: "w4"
+        :: availableLanguagesClasses
         |> String.join " "
 
 
@@ -76,6 +76,7 @@ dropdownContainer =
 dropdownList : Bool -> String
 dropdownList showAvailableLanguages =
     let
+        displayClasses : List String
         displayClasses =
             if showAvailableLanguages then
                 [ "flex", "flex-column" ]
@@ -83,25 +84,24 @@ dropdownList showAvailableLanguages =
             else
                 [ "dn" ]
     in
-    [ "absolute"
-    , "b--white"
-    , "bb"
-    , "bl"
-    , "br"
-    , "br--bottom"
-    , "br2"
-    , "items-center"
-    , "list"
-    , "mt5"
-    , "pl0"
-    , "pointer"
-    , "pr0"
-    , "pt1"
-    , "tc"
-    , "top-0"
-    , "w4"
-    ]
-        ++ displayClasses
+    "absolute"
+        :: "b--white"
+        :: "bb"
+        :: "bl"
+        :: "br"
+        :: "br--bottom"
+        :: "br2"
+        :: "items-center"
+        :: "list"
+        :: "mt5"
+        :: "pl0"
+        :: "pointer"
+        :: "pr0"
+        :: "pt1"
+        :: "tc"
+        :: "top-0"
+        :: "w4"
+        :: displayClasses
         |> String.join " "
 
 
