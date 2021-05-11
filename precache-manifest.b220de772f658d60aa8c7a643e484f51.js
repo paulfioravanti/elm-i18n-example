@@ -4,7 +4,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/elm-i18n-example/favicon.ico"
   },
   {
-    "revision": "724c9b17e02b354fad392740e0c1742a",
+    "revision": "45c347e2a4f86bcba6092fa0e18f5d85",
     "url": "/elm-i18n-example/index.html"
   },
   {
@@ -24,19 +24,19 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/elm-i18n-example/manifest.json"
   },
   {
-    "revision": "37365c04dea599c1f646",
-    "url": "/elm-i18n-example/static/css/vendors~main.d131ea9c.chunk.css"
+    "revision": "2c18ff5fb78bcb66c3c5",
+    "url": "/elm-i18n-example/static/css/vendors~main.80c13b84.chunk.css"
   },
   {
-    "revision": "dd3ed9215bad2f1e89c5",
-    "url": "/elm-i18n-example/static/js/main.dd3ed921.chunk.js"
+    "revision": "f1490b3a26d3328f95cf",
+    "url": "/elm-i18n-example/static/js/main.f1490b3a.chunk.js"
   },
   {
     "revision": "8f24ebc6208d892f2b60",
     "url": "/elm-i18n-example/static/js/runtime~main.8f24ebc6.js"
   },
   {
-    "revision": "37365c04dea599c1f646",
-    "url": "/elm-i18n-example/static/js/vendors~main.37365c04.chunk.js"
+    "revision": "2c18ff5fb78bcb66c3c5",
+    "url": "/elm-i18n-example/static/js/vendors~main.2c18ff5f.chunk.js"
   }
 ]);
