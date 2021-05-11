@@ -4,7 +4,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/elm-i18n-example/favicon.ico"
   },
   {
-    "revision": "45c347e2a4f86bcba6092fa0e18f5d85",
+    "revision": "708d8284d498a706783d6e12c5fa8448",
     "url": "/elm-i18n-example/index.html"
   },
   {
@@ -28,8 +28,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/elm-i18n-example/static/css/vendors~main.80c13b84.chunk.css"
   },
   {
-    "revision": "f1490b3a26d3328f95cf",
-    "url": "/elm-i18n-example/static/js/main.f1490b3a.chunk.js"
+    "revision": "3cb4cdb4e7ff41c4b21e",
+    "url": "/elm-i18n-example/static/js/main.3cb4cdb4.chunk.js"
   },
   {
     "revision": "8f24ebc6208d892f2b60",
