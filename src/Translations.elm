@@ -1,16 +1,26 @@
 module Translations exposing
-    ( Lang(..)
+    ( Lang
+    , availableLanguages
     , getCodeFromLn
     , getLnFromCode
+    , getLnFromFlag
+    , language
     , title
     , verticallyCenteringInCssIsEasy
     )
+
+import Json.Decode as Decode exposing (Value)
 
 
 type Lang
     = En
     | It
     | Ja
+
+
+availableLanguages : List Lang
+availableLanguages =
+    [ En, It, Ja ]
 
 
 getLnFromCode : String -> Lang
@@ -29,6 +39,20 @@ getLnFromCode code =
             En
 
 
+getLnFromFlag : Value -> Lang
+getLnFromFlag languageFlag =
+    let
+        decodedLanguage =
+            Decode.decodeValue Decode.string languageFlag
+    in
+    case decodedLanguage of
+        Ok lang ->
+            getLnFromCode lang
+
+        Err _ ->
+            En
+
+
 getCodeFromLn : Lang -> String
 getCodeFromLn code =
     case code of
@@ -40,6 +64,19 @@ getCodeFromLn code =
 
         Ja ->
             "ja"
+
+
+language : Lang -> String
+language lang =
+    case lang of
+        En ->
+            "English"
+
+        It ->
+            "Italiano"
+
+        Ja ->
+            "日本語"
 
 
 title : Lang -> String

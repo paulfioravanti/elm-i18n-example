@@ -1,11 +1,11 @@
 {
-  "main.js": "/elm-i18n-example/static/js/main.dd3ed921.chunk.js",
-  "main.js.map": "/elm-i18n-example/static/js/main.dd3ed921.chunk.js.map",
+  "main.js": "/elm-i18n-example/static/js/main.f1490b3a.chunk.js",
+  "main.js.map": "/elm-i18n-example/static/js/main.f1490b3a.chunk.js.map",
   "runtime~main.js": "/elm-i18n-example/static/js/runtime~main.8f24ebc6.js",
   "runtime~main.js.map": "/elm-i18n-example/static/js/runtime~main.8f24ebc6.js.map",
-  "vendors~main.css": "/elm-i18n-example/static/css/vendors~main.d131ea9c.chunk.css",
-  "vendors~main.js": "/elm-i18n-example/static/js/vendors~main.37365c04.chunk.js",
-  "vendors~main.js.map": "/elm-i18n-example/static/js/vendors~main.37365c04.chunk.js.map",
+  "vendors~main.css": "/elm-i18n-example/static/css/vendors~main.80c13b84.chunk.css",
+  "vendors~main.js": "/elm-i18n-example/static/js/vendors~main.2c18ff5f.chunk.js",
+  "vendors~main.js.map": "/elm-i18n-example/static/js/vendors~main.2c18ff5f.chunk.js.map",
   "./service-worker.js": "/elm-i18n-example/./service-worker.js",
   "favicon.ico": "/elm-i18n-example/favicon.ico",
   "index.html": "/elm-i18n-example/index.html",
@@ -13,5 +13,5 @@
   "locale/translations.it.json": "/elm-i18n-example/locale/translations.it.json",
   "locale/translations.ja.json": "/elm-i18n-example/locale/translations.ja.json",
   "manifest.json": "/elm-i18n-example/manifest.json",
-  "precache-manifest.780006029b31f4057286ecc85e76bb27.js": "/elm-i18n-example/precache-manifest.780006029b31f4057286ecc85e76bb27.js"
+  "precache-manifest.b220de772f658d60aa8c7a643e484f51.js": "/elm-i18n-example/precache-manifest.b220de772f658d60aa8c7a643e484f51.js"
 }

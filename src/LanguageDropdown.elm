@@ -4,7 +4,6 @@ import Html exposing (Html, div, li, p, span, text, ul)
 import Html.Attributes exposing (class)
 import Html.Events as Events exposing (onClick)
 import Json.Decode as Decode
-import Language
 import Model exposing (Model)
 import Msg exposing (Msg)
 import Styles
@@ -17,7 +16,7 @@ view { currentLanguage, showAvailableLanguages } =
         selectableLanguages =
             List.filter
                 (\language -> language /= currentLanguage)
-                Language.availableLanguages
+                Translations.availableLanguages
     in
     div [ class Styles.dropdownContainer ]
         [ currentSelection currentLanguage showAvailableLanguages
@@ -38,7 +37,7 @@ currentSelection currentLanguage showAvailableLanguages =
             )
         ]
         [ span []
-            [ text (Language.langToString currentLanguage) ]
+            [ text (Translations.language currentLanguage) ]
         , span [ class Styles.caret ]
             [ text "▾" ]
         ]
@@ -57,5 +56,5 @@ dropdownListItem language =
         , onClick (Msg.ChangeLanguage language)
         ]
         [ span []
-            [ text (Language.langToString language) ]
+            [ text (Translations.language language) ]
         ]

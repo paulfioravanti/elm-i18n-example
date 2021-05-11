@@ -5,7 +5,7 @@ const app = Elm.Main.init({
   flags: { language: getLanguage() }
 })
 
-app.ports.storeLanguageInLocalStorage.subscribe((language) => {
+app.ports.outbound.subscribe((language) => {
   localStorage.setItem("elm-i18n-example-language", language)
 })
 

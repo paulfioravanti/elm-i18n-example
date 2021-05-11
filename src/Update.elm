@@ -22,8 +22,7 @@ update msg model =
 
         Msg.ShowAvailableLanguages ->
             ( { model
-                | showAvailableLanguages =
-                    not model.showAvailableLanguages
+                | showAvailableLanguages = not model.showAvailableLanguages
               }
             , Cmd.none
             )
