@@ -35,6 +35,14 @@ npm install
 elm-app start
 ```
 
+## Run Review
+
+This repo uses [elm-review][] via [elm-review CLI][] to check coding standards.
+
+```sh
+npx elm-review
+```
+
 ## Deployment
 
 Deployed to [Github Pages][] using [gh-pages][] at
@@ -56,6 +64,8 @@ See [`push`][] file for details.
 
 [0.18 branch]: https://github.com/paulfioravanti/elm-i18n-example/tree/0.18
 [Elm]: http://elm-lang.org/
+[elm-review]: https://github.com/jfmengels/elm-review
+[elm-review CLI]: https://github.com/jfmengels/node-elm-review
 [Elm Sydney Meetup]: https://www.meetup.com/Sydney-Elm-Meetup/
 [elm-sydney-20180621]: https://www.meetup.com/Sydney-Elm-Meetup/events/pdpzvmyxjbcc/
 [Full Screen Centered Title component documentation page]: http://tachyons.io/components/layout/full-screen-centered-title/index.html

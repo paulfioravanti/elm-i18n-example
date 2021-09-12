@@ -23,6 +23,6 @@
     "tachyons": "^4.11.1"
   },
   "devDependencies": {
-    "elm-review": "^2.5.1"
+    "elm-review": "^2.5.5"
   }
 }
