@@ -72,6 +72,6 @@ See [`push`][] file for details.
 [gh-pages]: https://github.com/tschaub/gh-pages
 [Github Pages]: https://pages.github.com/
 [`push`]: /push
-[Runtime Language Switching in Elm]: https://paulfioravanti.com/blog/2018/05/11/runtime-language-switching-in-elm/
+[Runtime Language Switching in Elm]: https://paulfioravanti.com/blog/runtime-language-switching-in-elm/
 [speakerdeck]: https://speakerdeck.com/paulfioravanti/runtime-i18n-in-elm
 [Tachyons]: http://tachyons.io/
