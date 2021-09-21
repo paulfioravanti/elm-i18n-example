@@ -1,11 +1,12 @@
 import "tachyons"
 import { Elm } from "./Main.elm"
 
-const app = Elm.Main.init({
-  flags: { language: getLanguage() }
-})
+const app =
+  Elm.Main.init({
+    flags: { language: getLanguage() }
+  })
 
-app.ports.outbound.subscribe((language) => {
+app.ports.outbound.subscribe(language => {
   localStorage.setItem("elm-i18n-example-language", language)
 })
 
