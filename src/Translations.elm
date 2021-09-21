@@ -1,5 +1,5 @@
 module Translations exposing
-    ( Lang
+    ( Lang(..)
     , availableLanguages
     , getCodeFromLn
     , getLnFromFlag

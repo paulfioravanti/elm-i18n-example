@@ -20,7 +20,7 @@ update msg model =
         Msg.CloseAvailableLanguages ->
             ( { model | showAvailableLanguages = False }, Cmd.none )
 
-        Msg.ShowAvailableLanguages ->
+        Msg.ToggleAvailableLanguages ->
             ( { model
                 | showAvailableLanguages = not model.showAvailableLanguages
               }

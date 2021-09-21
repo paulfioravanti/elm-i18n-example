@@ -39,7 +39,7 @@ currentSelection currentLanguage showAvailableLanguages =
         showAvailableLanguagesMsg : EventMsg
         showAvailableLanguagesMsg =
             Decode.succeed
-                { message = Msg.ShowAvailableLanguages
+                { message = Msg.ToggleAvailableLanguages
                 , stopPropagation = True
                 , preventDefault = False
                 }

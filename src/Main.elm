@@ -18,10 +18,6 @@ main =
         }
 
 
-
--- PRIVATE
-
-
 init : Flags -> ( Model, Cmd Msg )
 init flags =
     let
