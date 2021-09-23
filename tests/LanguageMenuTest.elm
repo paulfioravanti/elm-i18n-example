@@ -1,10 +1,11 @@
 module LanguageMenuTest exposing (all)
 
 import Expect
+import Html exposing (Html)
 import Json.Encode exposing (string)
 import Main
 import Model exposing (Model)
-import Msg
+import Msg exposing (Msg)
 import Test exposing (Test, describe, test)
 import Test.Html.Event as Event exposing (click)
 import Test.Html.Query as Query
@@ -33,6 +34,7 @@ all =
 initialStateTest : Model -> Test
 initialStateTest model =
     let
+        html : Html Msg
         html =
             Utils.html model
     in
@@ -52,6 +54,7 @@ initialStateTest model =
 openMenuStateTest : Model -> Test
 openMenuStateTest model =
     let
+        html : Html Msg
         html =
             Utils.html { model | showAvailableLanguages = True }
     in
@@ -71,6 +74,7 @@ openMenuStateTest model =
 clickingCurrentLanguageTest : Model -> Test
 clickingCurrentLanguageTest model =
     let
+        html : Html Msg
         html =
             Utils.html model
     in
@@ -88,6 +92,7 @@ clickingCurrentLanguageTest model =
 closeMenuByClickingElsewhereTest : Model -> Test
 closeMenuByClickingElsewhereTest model =
     let
+        html : Html Msg
         html =
             Utils.html { model | showAvailableLanguages = True }
     in

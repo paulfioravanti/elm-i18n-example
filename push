@@ -2,5 +2,5 @@ set -e
 elm-app build
 git add .
 git commit --amend --no-edit --no-verify
-git push origin master
+git push --force origin master
 gh-pages --dist build

@@ -2,7 +2,7 @@ module UpdateTest exposing (all)
 
 import Expect
 import Model exposing (Model)
-import Msg
+import Msg exposing (Msg)
 import Test exposing (Test, describe, test)
 import Translations
 import Update
@@ -17,22 +17,25 @@ all =
         ]
 
 
-{-| NOTE: It's possible, and probably more correct here to use a custom Fuzzer
+{-| NOTE: It's possible, and probably more correct here, to use a custom Fuzzer
 to pick a language at random, but for this toy application, this amount of
 testing is probably enough.
 -}
 changeLanguageTest : Test
 changeLanguageTest =
     let
+        msg : Msg
         msg =
             Msg.ChangeLanguage Translations.It
 
+        model : Model
         model =
             Model.init Translations.En
 
         ( actualModel, _ ) =
             Update.update msg model
 
+        expectedModel : Model
         expectedModel =
             Model.init Translations.It
     in
@@ -46,9 +49,11 @@ changeLanguageTest =
 closeAvailableLanguagesTest : Test
 closeAvailableLanguagesTest =
     let
+        msg : Msg
         msg =
             Msg.CloseAvailableLanguages
 
+        model : Model
         model =
             Model Translations.En True ""
 
@@ -67,6 +72,7 @@ closeAvailableLanguagesTest =
 toggleAvailableLanguagesTest : Test
 toggleAvailableLanguagesTest =
     let
+        msg : Msg
         msg =
             Msg.ToggleAvailableLanguages
     in
@@ -74,6 +80,7 @@ toggleAvailableLanguagesTest =
         [ test "will toggle the showAvailableLanguages to true when false" <|
             \() ->
                 let
+                    model : Model
                     model =
                         Model Translations.En False ""
 
@@ -86,6 +93,7 @@ toggleAvailableLanguagesTest =
         , test "will toggle the showAvailableLanguages to false when true" <|
             \() ->
                 let
+                    model : Model
                     model =
                         Model Translations.En True ""
 

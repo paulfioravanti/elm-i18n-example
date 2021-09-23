@@ -3,8 +3,9 @@ module InitialLanguageTest exposing (all)
 import Expect
 import Json.Encode exposing (null, string)
 import Main
+import Model exposing (Flags)
 import Test exposing (Test, describe, test)
-import Translations
+import Translations exposing (Lang)
 
 
 all : Test
@@ -20,15 +21,18 @@ all =
 enFlagTest : Test
 enFlagTest =
     let
+        expectedLanguage : Lang
         expectedLanguage =
             Translations.En
 
+        flags : Flags
         flags =
             { language = string "en" }
 
         ( model, _ ) =
             Main.init flags
 
+        actualLanguage : Lang
         actualLanguage =
             model.currentLanguage
     in
@@ -42,15 +46,18 @@ enFlagTest =
 itFlagTest : Test
 itFlagTest =
     let
+        expectedLanguage : Lang
         expectedLanguage =
             Translations.It
 
+        flags : Flags
         flags =
             { language = string "it" }
 
         ( model, _ ) =
             Main.init flags
 
+        actualLanguage : Lang
         actualLanguage =
             model.currentLanguage
     in
@@ -64,15 +71,18 @@ itFlagTest =
 jaFlagTest : Test
 jaFlagTest =
     let
+        expectedLanguage : Lang
         expectedLanguage =
             Translations.Ja
 
+        flags : Flags
         flags =
             { language = string "ja" }
 
         ( model, _ ) =
             Main.init flags
 
+        actualLanguage : Lang
         actualLanguage =
             model.currentLanguage
     in
@@ -86,15 +96,18 @@ jaFlagTest =
 invalidFlagTest : Test
 invalidFlagTest =
     let
+        expectedLanguage : Lang
         expectedLanguage =
             Translations.En
 
+        flags : Flags
         flags =
             { language = null }
 
         ( model, _ ) =
             Main.init flags
 
+        actualLanguage : Lang
         actualLanguage =
             model.currentLanguage
     in

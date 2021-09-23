@@ -1,18 +1,16 @@
 module ChangingLanguageTest exposing (all)
 
-import Expect
 import Html exposing (Html)
-import Json.Encode exposing (null, string)
+import Json.Encode exposing (null)
 import Main
 import Model exposing (Model)
 import Msg exposing (Msg)
 import Test exposing (Test, describe, test)
 import Test.Html.Event as Event exposing (click)
 import Test.Html.Query as Query
-import Test.Html.Selector as Selector exposing (class, containing, tag, text)
+import Test.Html.Selector exposing (containing, tag, text)
 import Translations
 import Utils
-import View
 
 
 all : Test
@@ -35,6 +33,7 @@ all =
 changeLanguageToItalianTest : Model -> Test
 changeLanguageToItalianTest model =
     let
+        html : Html Msg
         html =
             Utils.html { model | showAvailableLanguages = True }
     in
@@ -52,6 +51,7 @@ changeLanguageToItalianTest model =
 changeLanguageToJapaneseTest : Model -> Test
 changeLanguageToJapaneseTest model =
     let
+        html : Html Msg
         html =
             Utils.html { model | showAvailableLanguages = True }
     in
@@ -69,6 +69,7 @@ changeLanguageToJapaneseTest model =
 changeLanguageToEnglishTest : Model -> Test
 changeLanguageToEnglishTest model =
     let
+        html : Html Msg
         html =
             Utils.html
                 { model
