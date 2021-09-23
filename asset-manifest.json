@@ -1,6 +1,6 @@
 {
-  "main.js": "/elm-i18n-example/static/js/main.db1d19a2.chunk.js",
-  "main.js.map": "/elm-i18n-example/static/js/main.db1d19a2.chunk.js.map",
+  "main.js": "/elm-i18n-example/static/js/main.09c2360b.chunk.js",
+  "main.js.map": "/elm-i18n-example/static/js/main.09c2360b.chunk.js.map",
   "runtime~main.js": "/elm-i18n-example/static/js/runtime~main.8f24ebc6.js",
   "runtime~main.js.map": "/elm-i18n-example/static/js/runtime~main.8f24ebc6.js.map",
   "vendors~main.css": "/elm-i18n-example/static/css/vendors~main.dfaa8154.chunk.css",
@@ -13,5 +13,5 @@
   "locale/translations.it.json": "/elm-i18n-example/locale/translations.it.json",
   "locale/translations.ja.json": "/elm-i18n-example/locale/translations.ja.json",
   "manifest.json": "/elm-i18n-example/manifest.json",
-  "precache-manifest.7cbaa2a564bd1573e27e2193bd87ce49.js": "/elm-i18n-example/precache-manifest.7cbaa2a564bd1573e27e2193bd87ce49.js"
+  "precache-manifest.7d5236335f49eefa4ee1118d05fabbad.js": "/elm-i18n-example/precache-manifest.7d5236335f49eefa4ee1118d05fabbad.js"
 }
